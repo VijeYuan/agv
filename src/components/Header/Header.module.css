@@ -1,0 +1,173 @@
+.hdr {
+  height: var(--hdr);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 0 0;
+  flex-shrink: 0;
+  z-index: 100;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* Logo / toggle */
+.logo {
+  width: var(--nav-w);
+  height: var(--hdr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+}
+.logo:hover { background: var(--surface2); }
+.logoExpanded { width: var(--nav-expanded); }
+
+.hamburger {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav-icon);
+}
+.hamburger svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+.logoFull {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0 10px 0 12px;
+}
+.logoMark {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: var(--txt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.logoMark svg { width: 15px; height: 15px; fill: #fff; }
+.logoName { font-size: 13px; font-weight: 700; color: var(--txt); flex: 1; white-space: nowrap; overflow: hidden; }
+.collapseBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav-icon);
+  margin-left: auto;
+  transition: background var(--dur), color var(--dur);
+}
+.collapseBtn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+.collapseBtn:hover { background: var(--surface3); color: var(--nav-active); }
+
+/* Search */
+.search {
+  flex: 1;
+  max-width: 360px;
+  margin-left: 14px;
+}
+.search input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 13px;
+  color: var(--txt);
+  outline: none;
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  transition: border-color var(--dur), background 0.2s;
+  box-shadow: none;
+}
+.search input::placeholder { color: var(--txt3); }
+.search input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-l); }
+
+/* Right area */
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.clock {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--txt3);
+  padding-right: 4px;
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--txt2);
+  transition: all var(--dur);
+  flex-shrink: 0;
+}
+.iconBtn:hover { border-color: var(--border2); color: var(--txt); }
+.iconBtn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+/* WiFi */
+.wifiBars { display: flex; align-items: flex-end; gap: 1.5px; height: 13px; }
+.wifiBar { width: 3px; border-radius: 1px; background: var(--border2); transition: background 0.2s; }
+.wifiOn  { background: var(--green); }
+
+/* Battery */
+.batBtn {
+  width: auto !important;
+  border-radius: 20px !important;
+  padding: 0 10px;
+  gap: 6px;
+}
+.batBody {
+  width: 20px;
+  height: 11px;
+  border: 1.5px solid var(--txt2);
+  border-radius: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5px;
+}
+.batBody::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5px;
+  height: 5px;
+  background: var(--txt2);
+  border-radius: 0 1px 1px 0;
+}
+.batFill { height: 100%; border-radius: 1px; background: var(--green); }
+.batPct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--txt2);
+}
+
+@media (max-width: 580px) {
+  .search { display: none; }
+  .clock  { display: none; }
+}

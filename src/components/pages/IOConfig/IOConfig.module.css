@@ -1,0 +1,17 @@
+.ioGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.ioItem {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  padding: 7px 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color var(--dur);
+}
+.led { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); flex-shrink: 0; }
+.ledIn  { background: var(--blue);  box-shadow: 0 0 5px rgba(79,110,247,0.5); }
+.ledOut { background: var(--green); box-shadow: 0 0 5px rgba(34,197,94,0.5); }
+.ioN { font-size: 11px; font-weight: 600; color: var(--txt); }
+.ioD { font-size: 9px; color: var(--txt3); }
+.ioV { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--txt3); }

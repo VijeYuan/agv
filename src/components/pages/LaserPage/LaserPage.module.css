@@ -1,0 +1,70 @@
+.laserView {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  height: 190px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed var(--border2);
+}
+.sweep {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: conic-gradient(rgba(79,110,247,0.1) 0deg 45deg, transparent 45deg);
+  animation: lspin 3s linear infinite;
+}
+.robot {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--txt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--bg);
+  box-shadow: var(--shadow);
+}
+.obs {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 6px rgba(239,68,68,0.5);
+  transform: translate(-50%,-50%);
+}
+.rangeLabel {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  color: var(--txt3);
+}
+.obsCount {
+  position: absolute;
+  bottom: 7px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: var(--txt3);
+  font-family: 'JetBrains Mono', monospace;
+}
+.obsDot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); display: inline-block; }
